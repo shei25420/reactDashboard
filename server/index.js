@@ -11,11 +11,6 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
-import User from './models/User.js';
-import Product from './models/Product.js';
-import ProductStat from './models/ProductStat.js';
-import { dataUser, dataProduct, dataProductStat } from './data/index.js';
-
 dotenv.config();
 
 const app = express();
@@ -39,5 +34,5 @@ const MONGOURL = process.env.MONGO_URL;
 mongoose.connect(MONGOURL, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-})
+ })
 .catch((err) => console.log(`${err} did not connect`));
